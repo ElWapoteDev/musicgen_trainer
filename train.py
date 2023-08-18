@@ -116,6 +116,22 @@ def train(
     use_cfg: bool = False,
     nombre_model: str = 'lm_final',
 ):
+    print("Entrenando:")
+    print(f"  Modelo ID: {model_id}")
+    print(f"  Learning Rate (lr): {lr}")
+    print(f"  Épocas (epochs): {epochs}")
+    print(f"  Batch Size: {batch_size}")
+    print(f"  Gradiente Accumulación: {grad_acc}")
+    print(f"  Weight Decay: {weight_decay}")
+    print(f"  Use WandB: {use_wandb}")
+    print(f"  No Label: {no_label}")
+    print(f"  Tune Text: {tune_text}")
+    print(f"  Save Step: {save_step}")
+    print(f"  Use Scaler: {use_scaler}")
+    print(f"  Warmup Steps: {warmup_steps}")
+    print(f"  Use Config: {use_cfg}")
+    print(f"  Nombre del Modelo: {nombre_model}")
+    
     if use_wandb:
         run = wandb.init(project="audiocraft")
 
