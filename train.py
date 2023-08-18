@@ -113,7 +113,8 @@ def train(
     weight_decay: float = 1e-5,
     warmup_steps: int = 10,
     batch_size: int = 10,
-    use_cfg: bool = False
+    use_cfg: bool = False,
+    nombre_model: str = 'lm_final',
 ):
     if use_wandb:
         run = wandb.init(project="audiocraft")
@@ -267,7 +268,7 @@ def train(
                     and int(current_step) % save_step == 0
                 ):
                     torch.save(
-                        model.lm.state_dict(), f"{save_path}/lm_{current_step}.pt"
+                        model.lm.state_dict(), f"{save_path}/{nombre_model}_{current_step}.pt"
                     )
 
-    torch.save(model.lm.state_dict(), f"{save_path}/lm_final.pt")
+    torch.save(model.lm.state_dict(), f"{save_path}/{nombre_model}.pt")
