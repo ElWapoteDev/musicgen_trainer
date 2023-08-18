@@ -158,7 +158,7 @@ def train(
     save_step = save_step
     save_models = False if save_step is None else True
 
-    save_path = "models/"
+    save_path = "/content/drive/MyDrive/models_musicgen/"
 
     os.makedirs(save_path, exist_ok=True)
 
